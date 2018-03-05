@@ -11,6 +11,10 @@ if [ -f /conf/create_config.sh ]; then
     /bin/sh -c /conf/create_config.sh
 fi
 
+#Wait for other services to be ready
+#TO DO: Improve to check for svc availability
+sleep 30
+
 if [ "$1" = 'haproxy' ]; then
 	shift # "haproxy"
 	# if the user wants "haproxy", let's add a couple useful flags
